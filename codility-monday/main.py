@@ -5,6 +5,9 @@ def min_filters_needed(A):
     max_heap = []
     for pollution in A:
         heapq.heappush(max_heap, -pollution)
+
     filters_count = 0 
-    reduced_population = 0
+    reduced_pollution = 0
+
     while reduced_pollution < target_pollution:
+        max_pollution = -heapq.heappop(max_heap)
